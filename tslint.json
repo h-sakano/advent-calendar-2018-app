@@ -9,11 +9,13 @@
     ]
   },
   "rules": {
-    "quotemark": [true, "single"],
     "indent": [true, "spaces", 2],
     "interface-name": false,
-    "ordered-imports": false,
+    "no-consecutive-blank-lines": false,
     "object-literal-sort-keys": false,
-    "no-consecutive-blank-lines": false
+    "ordered-imports": false,
+    "semicolon": [true, "never"],
+    "space-before-function-paren": [true, "always"],
+    "quotemark": [true, "single"]
   }
 }
