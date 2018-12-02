@@ -1701,6 +1701,11 @@ builtin-status-codes@^3.0.0:
   resolved "http://registry.npm.taobao.org/builtin-status-codes/download/builtin-status-codes-3.0.0.tgz#85982878e21b98e1c66425e03d0174788f569ee8"
   integrity sha1-hZgoeOIbmOHGZCXgPQF0eI9Wnug=
 
+bulma@^0.7.2:
+  version "0.7.2"
+  resolved "https://registry.yarnpkg.com/bulma/-/bulma-0.7.2.tgz#8e944377b74c7926558830d38d8e19eaf49f5fb6"
+  integrity sha512-6JHEu8U/1xsyOst/El5ImLcZIiE2JFXgvrz8GGWbnDLwTNRPJzdAM0aoUM1Ns0avALcVb6KZz9NhzmU53dGDcQ==
+
 bytebuffer@~5:
   version "5.0.1"
   resolved "https://registry.yarnpkg.com/bytebuffer/-/bytebuffer-5.0.1.tgz#582eea4b1a873b6d020a48d58df85f0bba6cfddd"
