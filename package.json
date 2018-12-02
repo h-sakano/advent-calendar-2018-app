@@ -5,6 +5,7 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
+    "deploy": "firebase deploy --only hosting --token ${FIREBASE_TOKEN}",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
