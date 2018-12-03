@@ -32,13 +32,18 @@
     "pre-commit": "lint-staged"
   },
   "lint-staged": {
-    "*.ts": [
-      "vue-cli-service lint",
-      "git add"
-    ],
-    "*.vue": [
-      "vue-cli-service lint",
-      "git add"
+    "linters": {
+      "*.ts": [
+        "vue-cli-service lint",
+        "git add"
+      ],
+      "*.vue": [
+        "vue-cli-service lint",
+        "git add"
+      ]
+    },
+    "ignore": [
+      "functions/**"
     ]
   }
 }
