@@ -29,7 +29,7 @@ export default class SignIn extends Vue {
           defaultCountry: 'JP',
         },
       ],
-      signInSuccessUrl: '/',
+      signInSuccessUrl: '/mypage',
     })
   }
 }

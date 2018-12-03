@@ -45,5 +45,9 @@ export default new Vuex.Store<StateType>({
         })
       }
     },
+    signOut ({ commit }) {
+      firebase.auth().signOut()
+      commit('setUser', null)
+    },
   },
 })

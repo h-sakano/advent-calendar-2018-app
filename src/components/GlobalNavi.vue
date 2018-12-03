@@ -25,8 +25,11 @@
       <div class="navbar-end">
         <div class="navbar-item">
           <div class="buttons">
-            <router-link to="/signin" class="button is-primary">
+            <router-link to="/signin" class="button is-primary" v-if="!$store.getters.isAuthenticated">
               <strong>Sign in</strong>
+            </router-link>
+            <router-link to="/mypage" class="button is-primary" v-if="$store.getters.isAuthenticated">
+              <strong>Mypage</strong>
             </router-link>
           </div>
         </div>
