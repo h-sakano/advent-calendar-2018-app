@@ -3,6 +3,7 @@ import firebase from 'firebase/app'
 import App from './App.vue'
 import router from './router'
 import store from './store'
+import { Location } from 'vue-router'
 
 Vue.config.productionTip = false
 
@@ -15,6 +16,47 @@ const config = {
   messagingSenderId: '298560560632',
 }
 firebase.initializeApp(config)
+
+store.dispatch('initialize')
+
+type NextType = (to?: string | false | void | Location | ((vm: Vue) => any) | undefined) => void
+
+const requiresAuthGuard = (next: NextType): void => {
+  if (store.getters.isAuthenticated) {
+    next()
+  } else {
+    next({ path: 'signin' })
+  }
+}
+
+const signinGuard = (next: NextType): void => {
+  if (store.getters.isAuthenticated) {
+    next({ path: '/' })
+  } else {
+    next()
+  }
+}
+
+const routerGuard = (next: NextType, guard: (next: NextType) => void) => {
+  if (!store.getters.isInitialized) {
+    const unwatch = store.watch((state) => state.initialized, () => {
+      guard(next)
+      unwatch()
+    })
+  } else {
+    guard(next)
+  }
+}
+
+router.beforeEach((to, from, next) => {
+  if (to.matched.some((record) => record.meta.requiresAuth)) {
+    routerGuard(next, requiresAuthGuard)
+  } else if (to.path === '/signin') {
+    routerGuard(next, signinGuard)
+  } else {
+    next()
+  }
+})
 
 new Vue({
   router,
