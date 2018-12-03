@@ -12,7 +12,7 @@ const config = {
   authDomain: 'advent-calendar-2018-app-7a5d3.firebaseapp.com',
   databaseURL: 'https://advent-calendar-2018-app-7a5d3.firebaseio.com',
   projectId: 'advent-calendar-2018-app-7a5d3',
-  storageBucket: '',
+  storageBucket: 'advent-calendar-2018-app-7a5d3.appspot.com',
   messagingSenderId: '298560560632',
 }
 firebase.initializeApp(config)
