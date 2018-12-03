@@ -16,6 +16,7 @@
     "sanitize-html": "^1.19.1"
   },
   "devDependencies": {
+    "@types/sanitize-html": "^1.18.2",
     "tslint": "~5.8.0",
     "typescript": "~2.8.3"
   },
